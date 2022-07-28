@@ -1,16 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
-    <script src="./scripts/index.js" defer></script>
-    <title>Hanoi tower</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <script src="./scripts/index.js" defer></script>
+  <title>Hanoi tower</title>
 </head>
+
 <body>
-   <div class="root">
-    jh
-   </div>
+  <div class="root">
+    <header class="header">
+      <nav class="nav">
+        <button class="glass-btn">Generate</button>
+        <h1 class="text-title">Hanoi tower</h1>
+        <p class="counter">Moves: <span class="counter__value">100</span></p>
+      </nav>
+    </header>
+    <main class="main">
+
+      <div class="tower tower-1">
+        <div class="tower__hand"></div>
+        <div class="tower__block"></div>
+        <div class="tower__blocks">
+          <div class="tower__block tower__block_1"></div>
+          <div class="tower__block tower__block_2"></div>
+          <div class="tower__block tower__block_3"></div>
+          <div class="tower__block tower__block_4"></div>
+          <div class="tower__block tower__block_5"></div>
+          <div class="tower__block tower__block_6"></div>
+        </div>
+        <div class="tower__rod"></div>
+      </div>
+
+      <div class="tower tower-2">
+        <div class="tower__hand"></div>
+        <div class="tower__block"></div>
+        <div class="tower__blocks">
+          <div class="tower__block tower__block_1"></div>
+          <div class="tower__block tower__block_2"></div>
+          <div class="tower__block tower__block_3"></div>
+          <div class="tower__block tower__block_4"></div>
+          <div class="tower__block tower__block_5"></div>
+          <div class="tower__block tower__block_6"></div>
+        </div>
+        <div class="tower__rod"></div>
+      </div>
+
+      <div class="tower tower-3">
+        <div class="tower__hand"></div>
+        <div class="tower__block"></div>
+        <div class="tower__blocks">
+          <div class="tower__block tower__block_1"></div>
+          <div class="tower__block tower__block_2"></div>
+          <div class="tower__block tower__block_3"></div>
+          <div class="tower__block tower__block_4"></div>
+          <div class="tower__block tower__block_5"></div>
+          <div class="tower__block tower__block_6"></div>
+        </div>
+        <div class="tower__rod"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <small class="smallprint">&copy; 2022 Varushichev Mikhail</small>
+    </footer>
+  </div>
 </body>
 </html>
