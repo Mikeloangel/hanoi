@@ -1,0 +1,14 @@
+.nav{
+    width: min(80%, 1024px);
+    margin: 0 auto;
+    padding: 20px 35px;
+  
+    display: flex;
+    place-content: center space-between;
+  
+    border-radius: 8px;
+    border: 1px solid rgba(229 216 216, .8);
+    background-color: rgba(256,256,256, .1);
+    box-shadow: 0 0 20px rgba(256,256,256, .4);
+    filter: blur(1);
+  }

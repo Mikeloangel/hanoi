@@ -1,0 +1,23 @@
+.glass-btn{
+    padding: 10px 12px;
+  
+    border-radius: 3px;
+    border: 1px solid rgba(229 216 216);
+    background-color: rgba(256,256,256, .1);
+    box-shadow: 0 0 5px rgba(256,256,256, .3);
+    color:rgb(48, 51, 127);
+  
+    font-weight: bolder;
+    font-size: 20px;
+
+    /* transition: all 2s ease-in-out; */
+  }
+  
+  .glass-btn:active{
+    background-color: rgba(206,206,206, .3);
+    color:rgb(77, 79, 144);
+  }
+/*   
+  .glass-btn:hover{
+    box-shadow: 0 0 9px rgba(256,256,256, .6);
+  } */
