@@ -1,0 +1,21 @@
+.root{
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background: rgb(203,91,173);
+  background: radial-gradient(circle, rgba(203,91,173,1) 0%, rgba(255,194,0,1) 100%);
+
+  font-family: 'poppins', sans-serif;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
