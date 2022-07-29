@@ -2,7 +2,8 @@ import {Hanoi} from './hanoi.js'
 
 const data = {
     containerSelector: '.hanoi-container',
-    towerTemplateSelector: '#tower-template'
+    towerTemplateSelector: '#tower-template',
+    debug: true
 }
 
 const generateBtn = document.querySelector('.btn-generate');
