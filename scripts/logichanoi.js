@@ -1,5 +1,5 @@
 export class LogicHanoi{
-  constructor(){
+  constructor(data){
       // structure
       // three towers represented as an array of stacks (arrays)
       this._towers = [ [],[],[] ]
@@ -11,14 +11,11 @@ export class LogicHanoi{
       //move counter
       this._move = 0;
 
-      this._grTowers = [];
-
       /**
          * DEBUG AREA
          */
-       this._isDebug = true;
-       this._debugArea = document.querySelector('.debugarea');
-
+       this._isDebug = data.debug;
+       this._debugArea = document.querySelector(data.debudSelector);
   }
 
   _dbg(){
@@ -26,7 +23,8 @@ export class LogicHanoi{
       this._debugArea.innerHTML = ''
       return;
     }
-      var res = `<table style="border:1px solid black;width:100%;">`
+      var res = `<p>DEBUG AREA:</p>
+      <table style="border:1px solid black;width:100%;">`
 
       res += `<tr>
       <td>*</td>
@@ -34,8 +32,6 @@ export class LogicHanoi{
       <td>${ this._handPosition === 1 ? this._handItem : ' ' }</td>
       <td>${ this._handPosition === 2 ? this._handItem : ' ' }</td>
       </tr>`;
-
-
 
       for(let i=5;i>=0;i--)
       res += `<tr style="border:1px solid black;">
@@ -71,7 +67,8 @@ export class LogicHanoi{
       if(i===1) return true;
       return false;
   }
-
+  //posistive direction is to the right
+  //negative direction to the left
   _moveHand(direction){
       this._handPosition += direction;
       if(this._handPosition>2) this._handPosition = 0;
@@ -84,6 +81,7 @@ export class LogicHanoi{
       if(this._handItem!=0) return false;
       this._handItem = this._towers[this._handPosition].pop();
       if(this._handItem === undefined) this._handItem = 0;
+      return true;
   }
 
   _dropItem(){
@@ -106,7 +104,7 @@ export class LogicHanoi{
   init(level = 6){
       if(level>6 || level<3){
           console.error('Level must be between 3 and 6')
-          return;
+          return false;
       }
 
       this._handPosition = 1;
@@ -123,6 +121,8 @@ export class LogicHanoi{
       // то попробуем сгенерировать еще раз
       if(this._checkTowers()) this.init(level);
 
+      this._dbg();
+      return true;
   }
 
 
