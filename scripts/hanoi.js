@@ -8,6 +8,8 @@ export class Hanoi extends LogicHanoi {
     this._grTowers = Array.from(this._hanoiContainer.querySelectorAll('.tower'));
     this._grBloks = Array.from(this._hanoiContainer.querySelectorAll('.tower__block'));
 
+    this._counter = document.querySelector(data.counterSelector);
+
     this._setEventListeners();
   }
 
@@ -74,6 +76,15 @@ export class Hanoi extends LogicHanoi {
     this._updateHandItem();
   }
 
+  _addMove(){
+    super._addMove();
+    this._updateCounter();
+  }
+
+  _updateCounter(){
+    this._counter.textContent = this._move;
+  }
+
   init(level=6){
     super.init(level);
 
@@ -86,13 +97,9 @@ export class Hanoi extends LogicHanoi {
       }
     });
 
-    //moving using blocks
+    this._updateCounter();
+
     this._grRevalidate();
-
-    //setting up hand
-
-
-
   }
 
 }

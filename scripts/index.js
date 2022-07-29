@@ -2,7 +2,8 @@ import {Hanoi} from './hanoi.js'
 
 const data = {
     containerSelector: '.hanoi-container',
-    debug: true,
+    counterSelector: '.counter__value',
+    debug: false,
     debudSelector : '.debugarea'
 }
 
@@ -11,8 +12,5 @@ const generateBtn = document.querySelector('.btn-generate');
 const hanoi = new Hanoi(data);
 hanoi.init(4);
 
-function initHanoi(h,levels){
-  h.init(levels);
-}
 
-generateBtn.addEventListener('click', e => initHanoi(hanoi,Math.floor(Math.random()*4+3)))
+generateBtn.addEventListener('click', e => hanoi.init(Math.floor(Math.random()*4+3)));
