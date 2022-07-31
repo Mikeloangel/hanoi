@@ -16,6 +16,7 @@ export class Hanoi extends LogicHanoi {
 
   _setEventListeners() {
     document.addEventListener('keydown', e => this._handleKeyPress(e));
+    this._hanoiContainer.addEventListener('click', e=> this._handleMouseClicks(e));
   }
 
   _handleKeyPress(e) {
@@ -34,6 +35,30 @@ export class Hanoi extends LogicHanoi {
         break;
     }
     this._dbg();
+  }
+
+  _handleMouseClicks(e){
+    // gets clicked tower from class name
+    let currentClickTower;
+    // if we click out of tower region inside container just doing nothing
+    try{
+      currentClickTower = Array.from(e.target.closest('.tower').classList).find( el => el.includes('tower-')).split(/ /)[0].replace(/[^\d]/g, '')-1;
+    }catch(e){
+      return;
+    }
+
+    if(this._handPosition!=currentClickTower){
+      this._handPosition = currentClickTower;
+      this._addMove();
+      this._grRevalidateHand();
+    }
+
+    if(this._handItem!=0){
+      this._dropItem();
+    }else{
+      this._pickupItem();
+    }
+
   }
 
   /**
