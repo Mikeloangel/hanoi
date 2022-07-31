@@ -28,7 +28,7 @@ export class LogicHanoi {
    * Shows debug information in debug container
    * towers structure to visual type
    */
-  _dbg() {
+  _redrawDebug() {
     if (!this._isDebug) {
       this._debugArea.innerHTML = ''
       return;
@@ -111,7 +111,7 @@ export class LogicHanoi {
     if (this._handItem != 0) return false;
 
     this._handItem = this._towers[this._handPosition].pop();
-    if (this._handItem === undefined) this._handItem = 0;
+    // if (this._handItem === undefined) this._handItem = 0;
     return true;
   }
 
@@ -186,6 +186,6 @@ export class LogicHanoi {
     this._generateTowers();
 
     // draws debug
-    this._dbg();
+    this._redrawDebug();
   }
 }

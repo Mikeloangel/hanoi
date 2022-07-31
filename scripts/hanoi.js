@@ -34,7 +34,7 @@ export class Hanoi extends LogicHanoi {
         this._dropItem();
         break;
     }
-    this._dbg();
+    this._redrawDebug();
   }
 
   _handleMouseClicks(e){
@@ -59,6 +59,7 @@ export class Hanoi extends LogicHanoi {
       this._pickupItem();
     }
 
+    this._redrawDebug();
   }
 
   /**
@@ -189,7 +190,6 @@ export class Hanoi extends LogicHanoi {
     super.init();
 
     this._reInitBlocks();
-    this._grUpdateCounter();
     this._grRevalidateAll();
   }
 }
