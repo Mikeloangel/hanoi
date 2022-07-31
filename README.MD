@@ -1,41 +1,5 @@
-# Project: MESTO. Interactive service for adding photos for Yandex.Practicum
-### 👾  `Created by ◕ ᴥ ◕ ʔ`  👾
-
----
-### Overview
-* Intro
-* Implementation
-* Stack of technology
-* Future improvements
-* URL
-
-## Intro
-Responsive and interactive service for adding photos with JavaScript backend.
-This project is created by using [Figma layout](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
-and was optimized for working on screens from 320px up to 1280px.
-Images in the site sourced from Figma and [optimized](https://tinypng.com/) to make this site load faster.
-
-## Implementation
-* The Nested BEM file structure
-* Flexbox
-* CSS Grid Layout
-* CSS media queries
-* Manipulating CSS and HTML by JavaScript
-* Reaction to user actions. Events
-
-## Stack of technology
-* HTML
-* CSS
-* JavaScript
-
-## Future improvements
-* Add comments
-
-## URL
-https://medvesvig.github.io/mesto/
-
-----
-# Проект: МЕСТО. Интерактивный сервис для добавления фотографий для Яндекс.Практикум
+# Проект: Ханойские башнм. Простая игра
+###   `Сделал Варушичев Михаил `
 ----
 
 ### Обзор
@@ -47,10 +11,6 @@ https://medvesvig.github.io/mesto/
 
 ## Интро
 
-Адаптивный и интерактивный сайт-сервис для добавления фотографий с бэкендом на JavaScript.
-Сайт создан по [макету Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
-и оптимизирован для просмотра на экранах от 320px и более 1280px.
-Изображения для сайта были получены из Figma и дополнительно [оптимизированы](https://tinypng.com/), чтобы сайт загружался быстрее.
 
 
 ## Реализовано
@@ -70,4 +30,4 @@ https://medvesvig.github.io/mesto/
 * Добавить комментарии
 
 ## Ссылка на сайт
-https://medvesvig.github.io/mesto/
+

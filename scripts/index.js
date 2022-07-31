@@ -1,16 +1,10 @@
-import {Hanoi} from './hanoi.js'
+import {hanoiSettings} from './data.js';
+import {Hanoi} from './hanoi.js';
 
-const data = {
-    containerSelector: '.hanoi-container',
-    counterSelector: '.counter__value',
-    debug: false,
-    debudSelector : '.debugarea'
-}
+const generateBtn = document.querySelector('.btn-startover');
 
-const generateBtn = document.querySelector('.btn-generate');
-
-const hanoi = new Hanoi(data);
-hanoi.init(4);
+const hanoi = new Hanoi(hanoiSettings);
+hanoi.init();
 
 
-generateBtn.addEventListener('click', e => hanoi.init(Math.floor(Math.random()*4+3)));
+generateBtn.addEventListener('click', e => hanoi.init());
