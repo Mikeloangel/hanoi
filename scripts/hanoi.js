@@ -1,8 +1,12 @@
 import { LogicHanoi } from "./logichanoi.js";
 
 export class Hanoi extends LogicHanoi {
-  constructor(data) {
+  constructor(data, stateFunctions) {
     super(data);
+
+    this._onStart = stateFunctions.onStart;
+    this._onLevelCompleted = stateFunctions.onLevelCompleted;
+    this._onGameCompleted = stateFunctions.onGameCompleted;
 
     this._hanoiContainer = document.querySelector(data.containerSelector);
     this._counterContainer = document.querySelector(data.counterSelector);
@@ -10,6 +14,14 @@ export class Hanoi extends LogicHanoi {
 
     this._grTowers = Array.from(this._hanoiContainer.querySelectorAll('.tower'));
     this._grBloks = Array.from(this._hanoiContainer.querySelectorAll('.tower__block'));
+
+    // this._grTowersHands = [];
+    // this._grTowersHandBlocks = [];
+
+    // this._grTowers.forEach((tower,index) =>{
+    //   this._grTowersHands.push(tower.querySelector('.tower__hand'));
+    //   this._grTowersHandBlocks.push(tower.querySelector('.tower__blocks'))
+    // });
 
     this._setEventListeners();
   }
@@ -82,8 +94,10 @@ export class Hanoi extends LogicHanoi {
   _grRevalidateBlocks() {
     this._towers.forEach((tower, ti) => {
       tower.forEach((block) => {
-        if (block != this._handItem)
+        if (block != this._handItem){
+          // this._grTowersHandBlocks[ti].prepend(this._grBloks[block - 1])
           this._grTowers[ti].querySelector('.tower__blocks').prepend(this._grBloks[block - 1])
+        }
       });
     })
   }
@@ -92,8 +106,10 @@ export class Hanoi extends LogicHanoi {
    * Redraws hand item
    */
   _grRevalidateHandItem() {
-    if (this._handItem != 0)
+    if (this._handItem != 0){
       this._grTowers[this._handPosition].querySelector('.hand__block').append(this._grBloks[this._handItem - 1]);
+      // this._grTowersHands[this._handPosition].append(this._grBloks[this._handItem - 1]);
+    }
   }
 
   /**
@@ -166,6 +182,12 @@ export class Hanoi extends LogicHanoi {
     super._nextLevel();
     this._reInitBlocks();
     this._grRevalidateAll();
+
+    if(this._isCompleted){
+      this._onGameCompleted();
+    }else{
+      this._onLevelCompleted();
+    }
   }
 
   /**
@@ -191,5 +213,7 @@ export class Hanoi extends LogicHanoi {
 
     this._reInitBlocks();
     this._grRevalidateAll();
+
+    this._onStart();
   }
 }

@@ -15,6 +15,10 @@ export class LogicHanoi {
     this._level = data.level;
     //moves counter
     this._move = 0;
+    //is game completed
+    this._isCompleted = false;
+    //is game paused
+    // this._isPaused = true;
 
     /**
        * DEBUG AREA
@@ -111,7 +115,9 @@ export class LogicHanoi {
     if (this._handItem != 0) return false;
 
     this._handItem = this._towers[this._handPosition].pop();
-    // if (this._handItem === undefined) this._handItem = 0;
+    // if stack was empty handItem will be equal to undefined
+    if (this._handItem === undefined) this._handItem = 0;
+
     return true;
   }
 
@@ -138,7 +144,7 @@ export class LogicHanoi {
    */
   _nextLevel() {
     if (this._level === 6) {
-      alert('Win!');
+      this._isCompleted = true;
     } else {
       this._level++;
       this._generateTowers();
@@ -181,6 +187,7 @@ export class LogicHanoi {
     this._handItem = 0;
     this._level = 3;
     this._move = 0;
+    this._isCompleted = false;
 
     // generates new tower elements
     this._generateTowers();
